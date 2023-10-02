@@ -31,7 +31,7 @@ function sendMessage() {
             const botText = data[0].text;
 
             // Affiche la réponse de l'API dans le chat
-            chatBox.innerHTML += `<div>Chatbot: ${botText}</div>`;
+            chatBox.innerHTML += `<div class="chatbot-message">Chatbot: ${botText}</div>`;
         } else {
             console.error('Réponse de l\'API invalide:', data);
         }

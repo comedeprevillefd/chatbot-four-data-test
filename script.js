@@ -6,7 +6,7 @@ function sendMessage() {
     chatBox.innerHTML += `<div>User: ${userInput}</div>`;
 
     // Envoie la requête POST à l'API
-    fetch('https://n8n.fourdata.io/webhook-test/chatbot-four-data-ff3c-ee-dijon', {
+    fetch('https://n8n.fourdata.io/webhook/chatbot-four-data-ff3c-ee-dijon', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

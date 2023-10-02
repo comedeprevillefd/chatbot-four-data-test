@@ -50,3 +50,7 @@ button:hover {
     background-color: #1BA1DC;
     color: #F8FAFC;
 }
+
+.chatbot-message {
+    color: #1BA1DC;
+}

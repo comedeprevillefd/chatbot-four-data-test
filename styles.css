@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    width: 1200px;
+    width: 600px;
 }
 
 #logo-container {
@@ -31,26 +31,28 @@ body {
 .input-container {
     display: flex;
     align-items: center;
-    padding: 10px;
-    background-color: #F8FAFC;
+    padding: 30px;
+    background-color: #1BA1DC;
 }
 
 input {
     flex: 1;
-    padding: 8px;
+    padding: 20px;
     margin-right: 8px;
     border: none;
     border-radius: 8px;
-    background-color: #F8FAFC;
+    background-color: #1BA1DC;
+    color: #F8FAFC;
     box-shadow: inset 4px 4px 8px rgba(18, 34, 54, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+    
 }
 
 #send-button {
     background-color: #122236;
     color: #F8FAFC;
     border: none;
-    padding: 8px 12px;
-    border-radius: 8px;
+    padding: 20px;
+    border-radius: 50px;
     cursor: pointer;
     box-shadow: 4px 4px 8px rgba(18, 34, 54, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.8);
 }

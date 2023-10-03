@@ -73,13 +73,38 @@ input {
 .user-message {
     margin-bottom: 50px; /* Espace de 50px entre chaque réponse dans le chat */
     text-align: right;
+    color: #1BA1DC;
 }
 
 .chatbot-message {
-    color: #1BA1DC;
     text-align: left;
+    color : #122236;
 }
 
 .user-message {
     text-align: right;
+    position: relative; /* Ajoutez cette ligne pour permettre le positionnement relatif */
+}
+
+.user-message .loader {
+    position: absolute; /* Ajoutez cette ligne pour permettre le positionnement absolu */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+a {
+    color: #1BA1DC;
 }

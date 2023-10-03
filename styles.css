@@ -5,25 +5,38 @@ body {
     color: #122236;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-#chat-box {
-    height: calc(100% - 70px); /* Ajuste la hauteur du chat-box */
-    overflow-y: auto;
-    padding: 10px;
+.container {
+    width: 1200px;
+}
+
+.chat-container {
+    border: 1px solid #1BA1DC;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(18, 34, 54, 0.1);
+    background-color: #F8FAFC;
 }
 
 #logo-container {
     margin-top: 20px;
 }
 
+#chat-box {
+    height: calc(100% - 70px);
+    overflow-y: auto;
+    padding: 10px;
+}
+
 .input-container {
     display: flex;
     align-items: center;
     padding: 10px;
-    background-color: #1BA1DC;
+    background-color: #F8FAFC;
+    border-top: 1px solid #1BA1DC;
 }
 
 input {
@@ -31,8 +44,9 @@ input {
     padding: 8px;
     margin-right: 8px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: #F8FAFC;
+    box-shadow: inset 4px 4px 8px rgba(18, 34, 54, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.8);
 }
 
 #send-button {
@@ -40,8 +54,9 @@ input {
     color: #F8FAFC;
     border: none;
     padding: 8px 12px;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(18, 34, 54, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.8);
 }
 
 #loader {
@@ -50,7 +65,7 @@ input {
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    display: none; /* Initialement masqué */
+    display: none;
     margin-left: 10px;
     animation: spin 1s linear infinite;
 }
@@ -58,6 +73,11 @@ input {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.chatbot-message,
+.user-message {
+    margin-bottom: 50px; /* Espace de 50px entre chaque réponse dans le chat */
 }
 
 .chatbot-message {

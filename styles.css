@@ -3,9 +3,9 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #F8FAFC;
     color: #122236;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -13,16 +13,13 @@ body {
     width: 1200px;
 }
 
-.chat-container {
-    border: 1px solid #1BA1DC;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(18, 34, 54, 0.1);
-    background-color: #F8FAFC;
-}
-
 #logo-container {
     margin-top: 20px;
+}
+
+.chat-container {
+    margin-top: auto; /* Positionne le chat-container en bas de la page */
+    border-radius: 0; /* Supprime les bordures */
 }
 
 #chat-box {
@@ -36,7 +33,6 @@ body {
     align-items: center;
     padding: 10px;
     background-color: #F8FAFC;
-    border-top: 1px solid #1BA1DC;
 }
 
 input {

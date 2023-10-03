@@ -28,13 +28,13 @@ function sendMessage() {
     .then(response => response.json())
     .then(data => {
         console.log('Réponse de l\'API:', data);
-
-        // Assurez-vous que la réponse est un tableau non vide
-        if (Array.isArray(data) && data.length > 0) {
-            // Récupère le texte de la première réponse
-            const botText = data[0].text;
+    
+        // Assurez-vous que la réponse est un objet non vide
+        if (typeof data === 'object' && data.text) {
+            // Récupère le texte de la réponse
+            const botText = data.text;
             console.log('Texte du chatbot:', botText);
-
+    
             // Affiche la réponse de l'API dans le chat
             const chatbotMessage = document.createElement('div');
             chatbotMessage.className = 'chatbot-message';

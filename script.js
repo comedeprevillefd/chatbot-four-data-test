@@ -2,13 +2,9 @@ function sendMessage() {
 
     const userInput = document.getElementById('user-input').value;
     const chatBox = document.getElementById('chat-box');
-    const loader = document.getElementById('loader');
-
-    // Afficher l'animation de chargement
-    loader.style.display = 'inline-block';
-
+    
     // Affiche le message de l'utilisateur dans le chat
-    chatBox.innerHTML += `<div>User: ${userInput}</div>`;
+    chatBox.innerHTML += `<div><b>Moi :</b> ${userInput}</div>`;
 
     // Crée un objet FormData pour envoyer les données
     const formData = new FormData();
@@ -43,7 +39,7 @@ function sendMessage() {
             // Affiche la réponse de l'API dans le chat
             const chatbotMessage = document.createElement('div');
             chatbotMessage.className = 'chatbot-message';
-            chatbotMessage.innerHTML = `<div>FD Chatbot: ${botText}</div>`;
+            chatbotMessage.innerHTML = `<div><b>FD Chatbot :</b> ${botText}</div>`;
             chatBox.appendChild(chatbotMessage);
             console.log('Message du chatbot ajouté à la boîte de chat:', chatbotMessage);
         } else {
@@ -54,7 +50,4 @@ function sendMessage() {
 
     // Efface le champ de saisie
     document.getElementById('user-input').value = '';
-
-     // En fin de traitement, masquer l'animation de chargement
-    loader.style.display = 'none';
 }

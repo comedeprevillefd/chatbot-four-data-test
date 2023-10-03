@@ -38,7 +38,7 @@ function sendMessage() {
             // Affiche la réponse de l'API dans le chat
             const chatbotMessage = document.createElement('div');
             chatbotMessage.className = 'chatbot-message';
-            chatbotMessage.innerHTML = `<div>Chatbot: ${botText}</div>`;
+            chatbotMessage.innerHTML = `<div>FD Chatbot: ${botText}</div>`;
             chatBox.appendChild(chatbotMessage);
             console.log('Message du chatbot ajouté à la boîte de chat:', chatbotMessage);
         } else {

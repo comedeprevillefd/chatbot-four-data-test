@@ -10,7 +10,9 @@ function sendMessage() {
     formData.append('message', userInput);
 
     // Construit le corps de la requête manuellement
-    const body = Array.from(formData.entries()).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`).join('&');
+    const body = Array.from(formData.entries())
+        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+        .join('&');
 
     // Envoie la requête POST à l'API
     fetch('https://n8n.fourdata.io/webhook/chatbot-four-data-ff3c-ee-dijon', {
@@ -18,7 +20,7 @@ function sendMessage() {
         headers: {
             'Accept': '*/*',
             'Accept-Encoding': 'gzip, deflate, br',
-            'Content-Type': 'application/x-www-form-urlencoded',  // Utilisation de 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded',
             // Ajoutez d'autres entêtes si nécessaire
         },
         body: body,
@@ -31,7 +33,10 @@ function sendMessage() {
             const botText = data[0].text;
 
             // Affiche la réponse de l'API dans le chat
-            chatBox.innerHTML += `<div class="chatbot-message">Chatbot: ${botText}</div>`;
+            const chatbotMessage = document.createElement('div');
+            chatbotMessage.className = 'chatbot-message';
+            chatbotMessage.innerHTML = `<div>Chatbot: ${botText}</div>`;
+            chatBox.appendChild(chatbotMessage);
         } else {
             console.error('Réponse de l\'API invalide:', data);
         }

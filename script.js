@@ -27,16 +27,20 @@ function sendMessage() {
     })
     .then(response => response.json())
     .then(data => {
+        console.log('Réponse de l\'API:', data);
+
         // Assurez-vous que la réponse est un tableau non vide
         if (Array.isArray(data) && data.length > 0) {
             // Récupère le texte de la première réponse
             const botText = data[0].text;
+            console.log('Texte du chatbot:', botText);
 
             // Affiche la réponse de l'API dans le chat
             const chatbotMessage = document.createElement('div');
             chatbotMessage.className = 'chatbot-message';
             chatbotMessage.innerHTML = `<div>Chatbot: ${botText}</div>`;
             chatBox.appendChild(chatbotMessage);
+            console.log('Message du chatbot ajouté à la boîte de chat:', chatbotMessage);
         } else {
             console.error('Réponse de l\'API invalide:', data);
         }

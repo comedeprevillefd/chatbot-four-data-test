@@ -1,3 +1,26 @@
+// Attend que le DOM soit complètement chargé
+document.addEventListener('DOMContentLoaded', function () {
+    // Sélectionne le chat-box
+    const chatBox = document.getElementById('chat-box');
+
+    // Message de bienvenue
+    const welcomeMessage = `
+        <div class="chatbot-message">
+            <b>FD Chatbot :</b> Bienvenue ! Je suis l'IA de Four Data, vous pouvez me poser les questions que vous voulez, j'essaierai d'y répondre de manière ... pertinente !
+        </div>
+    `;
+
+    // Ajoute le message de bienvenue au chat-box
+    chatBox.innerHTML += welcomeMessage;
+
+    // Défilement automatique vers le bas avec une animation en douceur
+    chatBox.scrollTo({
+        top: chatBox.scrollHeight,
+        behavior: 'smooth'
+    });
+});
+
+
 function sendMessage() {
     const userInput = document.getElementById('user-input').value;
     const chatBox = document.getElementById('chat-box');
